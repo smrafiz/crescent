@@ -18,7 +18,7 @@ class Crescent_Base {
      * Theme Version.
      *
      * @access private
-     * @since  1.0
+     * @since 1.0.0
      */
     private $theme_version;
 
@@ -26,7 +26,7 @@ class Crescent_Base {
      * Theme Root Directory Path.
      *
      * @access private
-     * @since  1.0
+     * @since 1.0.0
      */
     private $root_dir_path;
 
@@ -34,7 +34,7 @@ class Crescent_Base {
      * Framework Directory Path.
      *
      * @access private
-     * @since  1.0
+     * @since 1.0.0
      */
     private $framework_dir_path;
 
@@ -42,7 +42,7 @@ class Crescent_Base {
      * Vendor Directory Path.
      *
      * @access private
-     * @since  1.0
+     * @since 1.0.0
      */
     private $vendor_dir_path;
 
@@ -50,7 +50,7 @@ class Crescent_Base {
      * Root Directory URL.
      *
      * @access private
-     * @since  1.0
+     * @since 1.0.0
      */
     private $root_uri;
 
@@ -58,7 +58,7 @@ class Crescent_Base {
      * Assets Directory URL.
      *
      * @access private
-     * @since  1.0
+     * @since 1.0.0
      */
     private $assets_uri;
 
@@ -66,7 +66,7 @@ class Crescent_Base {
      * CSS Directory URL.
      *
      * @access private
-     * @since  1.0
+     * @since 1.0.0
      */
     private $css_uri;
 
@@ -74,7 +74,7 @@ class Crescent_Base {
      * JS Directory URL.
      *
      * @access private
-     * @since  1.0
+     * @since 1.0.0
      */
     private $js_uri;
 
@@ -82,7 +82,7 @@ class Crescent_Base {
      * Images Directory URL.
      *
      * @access private
-     * @since  1.0
+     * @since 1.0.0
      */
     private $images_uri;
 
@@ -92,7 +92,7 @@ class Crescent_Base {
      * @static
      * @access public
      * @var null|object
-     * @since  1.0
+     * @since 1.0.0
      */
     public static $instance = null;
 
@@ -102,7 +102,7 @@ class Crescent_Base {
      * @static
      * @access public
      * @return Crescent_Base
-     * @since  1.0
+     * @since 1.0.0
      */
     public static function get_instance() {
         if ( null === self::$instance ) {
@@ -116,31 +116,31 @@ class Crescent_Base {
      * Defining theme constants.
      *
      * @access protected
-     * @since  1.0
+     * @since 1.0.0
      */
     protected function __construct() {
 
         // Theme Name & Version.
-        $this->theme_name           = wp_get_theme()->__get( 'Name' );
-        $this->theme_slug           = strtolower( str_replace( ' ', '_', $this->theme_name ) );
-        $this->theme_version        = '1.0';
+        $this->theme_name    = wp_get_theme()->__get( 'Name' );
+        $this->theme_slug    = strtolower( str_replace( ' ', '_', $this->theme_name ) );
+        $this->theme_version = '1.0';
 
         // System constants.
-        $this->root_dir_path        = wp_normalize_path( get_theme_file_path() );
-        $this->framework_dir_path   = trailingslashit( wp_normalize_path( get_theme_file_path( 'inc' ) ) );
-        $this->vendor_dir_path      = trailingslashit( wp_normalize_path( get_theme_file_path( 'vendor' ) ) );
-        $this->root_uri             = trailingslashit( get_theme_file_uri() );
-        $this->assets_uri           = trailingslashit( get_theme_file_uri( 'assets' ) );
-        $this->css_uri              = trailingslashit( get_theme_file_uri( 'assets/css' ) );
-        $this->js_uri               = trailingslashit( get_theme_file_uri( 'assets/js' ) );
-        $this->images_uri           = trailingslashit( get_theme_file_uri( 'assets/images' ) );
+        $this->root_dir_path      = wp_normalize_path( get_theme_file_path() );
+        $this->framework_dir_path = trailingslashit( wp_normalize_path( get_theme_file_path( 'inc' ) ) );
+        $this->vendor_dir_path    = trailingslashit( wp_normalize_path( get_theme_file_path( 'vendor' ) ) );
+        $this->root_uri           = trailingslashit( get_theme_file_uri() );
+        $this->assets_uri         = trailingslashit( get_theme_file_uri( 'assets' ) );
+        $this->css_uri            = trailingslashit( get_theme_file_uri( 'assets/css' ) );
+        $this->js_uri             = trailingslashit( get_theme_file_uri( 'assets/js' ) );
+        $this->images_uri         = trailingslashit( get_theme_file_uri( 'assets/images' ) );
     }
 
     /**
      * Theme Name.
      *
      * @access public
-     * @since  1.0
+     * @since 1.0.0
      */
     public function get_theme_name() {
         return $this->theme_name;
@@ -150,7 +150,7 @@ class Crescent_Base {
      * Theme Slug.
      *
      * @access public
-     * @since  1.0
+     * @since 1.0.0
      */
     public function get_theme_slug() {
         return $this->theme_slug;
@@ -160,7 +160,7 @@ class Crescent_Base {
      * Theme Version.
      *
      * @access public
-     * @since  1.0
+     * @since 1.0.0
      */
     public function get_theme_version() {
         return $this->theme_version;
@@ -170,7 +170,7 @@ class Crescent_Base {
      * Theme Directory.
      *
      * @access public
-     * @since  1.0
+     * @since 1.0.0
      */
     public function get_theme_directory() {
         return $this->root_dir_path;
@@ -180,7 +180,7 @@ class Crescent_Base {
      * Framework Directory.
      *
      * @access public
-     * @since  1.0
+     * @since 1.0.0
      */
     public function get_framework_directory() {
         return $this->framework_dir_path;
@@ -190,7 +190,7 @@ class Crescent_Base {
      * Vendor Directory.
      *
      * @access public
-     * @since  1.0
+     * @since 1.0.0
      */
     public function get_vendor_directory() {
         return $this->vendor_dir_path;
@@ -200,7 +200,7 @@ class Crescent_Base {
      * Theme URI.
      *
      * @access public
-     * @since  1.0
+     * @since 1.0.0
      */
     public function get_theme_uri() {
         return $this->root_uri;
@@ -210,7 +210,7 @@ class Crescent_Base {
      * Theme Assets URI.
      *
      * @access public
-     * @since  1.0
+     * @since 1.0.0
      */
     public function get_assets_uri() {
         return $this->assets_uri;
@@ -220,7 +220,7 @@ class Crescent_Base {
      * Theme CSS URI.
      *
      * @access public
-     * @since  1.0
+     * @since 1.0.0
      */
     public function get_css_uri() {
         return $this->css_uri;
@@ -230,7 +230,7 @@ class Crescent_Base {
      * Theme JS URI.
      *
      * @access public
-     * @since  1.0
+     * @since 1.0.0
      */
     public function get_js_uri() {
         return $this->js_uri;
@@ -240,7 +240,7 @@ class Crescent_Base {
      * Theme Images URI.
      *
      * @access public
-     * @since  1.0
+     * @since 1.0.0
      */
     public function get_images_uri() {
         return $this->images_uri;
@@ -253,7 +253,7 @@ class Crescent_Base {
      * @param  string $file The file to require.
      * @return bool True if the file exists, false if not.
      * @access public
-     * @since  1.0
+     * @since 1.0.0
      */
     public static function require_file( $file ) {
         if ( file_exists( $file ) ) {
